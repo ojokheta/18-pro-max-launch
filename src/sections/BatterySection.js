@@ -24,6 +24,7 @@ const Title = styled.h1`
 
   text-transform: capitalize;
   font-size: var(--fontBig);
+  color: var(--dark);
   z-index: 1;
 
   @media screen and (max-width: 70em) {
@@ -51,11 +52,32 @@ const Battery = styled.ul`
   padding: 0.5rem;
   width: 15rem;
 
+  /* the little positive terminal cap of a real battery */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -0.9rem;
+    transform: translateY(-50%);
+    width: 0.6rem;
+    height: 2.2rem;
+    background-color: var(--dark);
+    border-radius: 0 4px 4px 0;
+  }
+
   li {
     width: 100%;
     height: 5rem;
-    background-color: var(--dark);
-    background-image: linear-gradient(-90deg, var(--gradient));
+    background-color: #00e676;
+    background-image: linear-gradient(
+      180deg,
+      #69f0ae 0%,
+      #00e676 55%,
+      #00c853 100%
+    );
+    box-shadow: inset 0 0 0.4rem rgba(0, 200, 83, 0.55),
+      0 0 0.9rem rgba(0, 230, 118, 0.55);
+    border-radius: 3px;
     opacity: 0;
   }
 
@@ -95,7 +117,7 @@ const BatterySection = () => {
 
   return (
     <Section id="battery">
-      <Title>Go all day with single charge...</Title>
+      <Title>Up to 33 hours battery life. Go all day and beyond...</Title>
       <Battery ref={battery}>
         <li />
         <li />

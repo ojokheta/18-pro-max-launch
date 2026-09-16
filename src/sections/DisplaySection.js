@@ -15,7 +15,7 @@ const Section = styled.section`
   flex-direction: column;
 
   background-color: var(--dark);
-  color: var(--white);
+  color: var(--textLight);
 
   & > *:nth-child(even) {
     align-self: flex-end;
@@ -37,11 +37,13 @@ const Section = styled.section`
 const MainTitle = styled.h1`
   font-size: var(--fontBig);
   font-family: var(--fontL);
+  font-weight: 800;
 
-  background-image: linear-gradient(-45deg, var(--gradient));
+  background-image: linear-gradient(135deg, #f5f5f7 0%, #d9d9de 60%, #b8b8bf 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
 
   @media screen and (max-width: 70em) {
     font-size: var(--fontxxxl);
@@ -73,6 +75,8 @@ const TextBlockLeft = styled.div`
 const Title = styled.div`
   font-size: var(--fontlg);
   margin-bottom: 1rem;
+  color: var(--white);
+  font-weight: 700;
 
   @media screen and (max-width: 64em) {
     font-size: var(--fontmd);
@@ -81,7 +85,10 @@ const Title = styled.div`
 
 const Text = styled.div`
   font-size: var(--fontxs);
-  color: var(--greyLight);
+  color: var(--textLight);
+  font-weight: 600;
+  line-height: 1.5;
+  opacity: 0.9;
   margin-bottom: 0.5rem;
   width: 55%;
 
@@ -107,11 +114,13 @@ const TextContainer = styled.div`
 const MovingText = styled.h1`
   font-size: var(--fontBig);
   font-family: var(--fontL);
+  font-weight: 800;
 
-  background-image: linear-gradient(-45deg, var(--gradient));
+  background-image: linear-gradient(135deg, #f5f5f7 0%, #d9d9de 60%, #b8b8bf 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
 
   @media screen and (max-width: 70em) {
     font-size: var(--fontxxxl);
@@ -159,22 +168,24 @@ const DisplaySection = () => {
         Immersive <br /> Display
       </MainTitle>
       <TextBlockRight>
-        <Title>Super Ratine XDR Display</Title>
+        <Title>Super Retina XDR Display with ProMotion</Title>
         <Text>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Necessitatibus dignissimos ipsam.
+          Next-generation OLED featuring 120Hz adaptive ProMotion, 3000 nits peak
+          outdoor brightness, and micro-lens clarity for razor-sharp fidelity in
+          any light.
         </Text>
       </TextBlockRight>
       <TextBlockLeft ref={container}>
         <Title>Big is better</Title>
         <Text>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Necessitatibus dignissimos ipsam.
+          An expansive 6.9-inch borderless Ceramic Shield canvas with
+          ultra-thin bezels, Always-On intelligence, and real-time computational
+          camera preview.
         </Text>
       </TextBlockLeft>
 
       <TextContainer>
-        <MovingText ref={textOne}>Tougher then ever!</MovingText>
+        <MovingText ref={textOne}>Tougher than ever!</MovingText>
         <MovingText ref={textTwo}>Every touch matters.</MovingText>
       </TextContainer>
     </Section>

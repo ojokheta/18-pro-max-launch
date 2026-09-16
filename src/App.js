@@ -10,6 +10,7 @@ import ColorSection from "./sections/ColorSection";
 import CameraSection from "./sections/CameraSection";
 import PricingSection from "./sections/PricingSection";
 import { ColorContextProvider } from "./context/ColorContext";
+import BottomNav from "./components/BottomNav";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <ColorSection />
         <CameraSection />
         <PricingSection />
+        <BottomNav />
       </ColorContextProvider>
     </>
   );

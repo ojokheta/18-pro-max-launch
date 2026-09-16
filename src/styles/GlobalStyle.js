@@ -2,14 +2,11 @@ import { createGlobalStyle } from "styled-components";
 import fontLight from "../assets/fonts/SourceSansPro-Light.ttf";
 import fontRegular from "../assets/fonts/SourceSansPro-Regular.ttf";
 
-
-
 export const GlobalStyle = createGlobalStyle`
 
 *,*::before,*::after{
     margin: 0;
     padding: 0;
-    ${'' /* outline: 1px solid red !important; */}
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -48,7 +45,6 @@ body{
  --fontxs: 1em; //16 px
  --fontxxs: 0.75em; //12 px
 
-
   // Colors
   --dark: #000000;
   --grey: #666666;
@@ -56,15 +52,18 @@ body{
   --offWhite: #eeeeee;
   --white: #ffffff;
   --blue: #0071e3;
-  --blueRgba:"0, 113, 227";
+  --blueRgba: "0, 113, 227";
+
+  // Text colors used across sections
+  --textLight: #f5f5f7;
+  --textDark: #1d1d1f;
+  --textMuted: #a1a1a6;
 
   //fonts
   --fontL: "Source Sans Pro light";
   --fontR: "Source Sans Pro";
-  
+
   // gradient
   --gradient: #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%;
 }
-
-
-`
+`;

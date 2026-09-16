@@ -26,7 +26,7 @@ const TextContainer = styled.p`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  color: var(--dark);
+  color: var(--textDark);
 
   span {
     font-size: var(--fontBig);
@@ -59,7 +59,7 @@ const TextContainer2 = styled.p`
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  color: var(--dark);
+  color: var(--textDark);
 
   span {
     font-size: var(--fontxxxl);
@@ -113,11 +113,11 @@ const DesignSection = () => {
   return (
     <Section ref={container}>
       <TextContainer ref={textOne}>
-        <span>Flaw-less design with strong durability.</span>
+        <span>Flawless design with aerospace-grade titanium.</span>
       </TextContainer>
 
       <TextContainer2 ref={textTwo}>
-        <span>Flat-edge design with toughest smartphone glass.</span>
+        <span>Sculpted titanium contours with next-generation Ceramic Shield.</span>
       </TextContainer2>
     </Section>
   );

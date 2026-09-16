@@ -49,17 +49,19 @@ const Text = styled.p`
     animation-fill-mode: forwards;
     animation-delay: ${(props) => props.delay};
     font-family: var(--fontL);
-    background-image: linear-gradient(-45deg, var(--gradient));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    color: var(--white);
+    -webkit-text-fill-color: var(--white);
+    filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.45));
   }
 
   .author {
     width: 100%;
     text-align: end;
-    background-image: linear-gradient(-180deg, var(--gradient));
     font-family: var(--fontR);
+    font-weight: 700;
+    color: var(--white);
+    -webkit-text-fill-color: var(--white);
   }
 
   @media screen and (max-width: 70em) {

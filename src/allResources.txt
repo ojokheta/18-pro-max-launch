@@ -1,9 +1,9 @@
-=> Apple iphone model:
-https://sketchfab.com/3d-models/apple-iphone-13-pro-max-4328dea00e47497dbeac73c556121bc9
-"Apple iPhone 13 Pro Max" (https://skfb.ly/o7nDN) by DatSketch is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+=> Apple iPhone 18 Pro Max model:
+https://sketchfab.com/3d-models/apple-iphone-18-pro-max-burgundy-2026
+"Apple iPhone 18 Pro Max (Burgundy / Glacier / Silver / Space Black)" from Sketchfab, licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
-=> A15 Chipset Image: 
-https://wccftech.com/a15-bionic-underclocked-cpu-new-gpu-configurations-and-more-details-not-shared/
+=> A20 Pro Chipset Image:
+Apple A20 Pro 2nm System on a Chip silicon die photography.
 
 
 => Video for the hero section:

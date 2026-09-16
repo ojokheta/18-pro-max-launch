@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import a15 from "../assets/Images/A15-Bionic.jpg";
+import a20Chip from "../assets/Images/a20-pro-chip.jpg";
 
 const Section = styled.section`
   width: 100vw;
@@ -25,12 +25,14 @@ const Title = styled.h1`
   transform: translateX(-50%);
   font-size: var(--fontBig);
   font-family: var(--fontL);
+  font-weight: 800;
   z-index: 1;
 
-  background-image: linear-gradient(90deg, var(--gradient));
+  background-image: linear-gradient(135deg, #f5f5f7 0%, #d9d9de 50%, #b8b8bf 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.55));
 
   @media screen and (max-width: 70em) {
     font-size: var(--fontxxxl);
@@ -43,15 +45,27 @@ const Title = styled.h1`
   }
 `;
 
+const Subtitle = styled.span`
+  display: block;
+  font-size: 0.35em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: var(--fontR);
+  font-weight: 700;
+  margin-top: 0.5rem;
+  color: var(--white);
+  -webkit-text-fill-color: var(--white);
+`;
+
 const glow = keyframes`
 0%{
-    box-shadow: 1px 1px 10px var(--white);
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.4);
 }
 50%{
-    box-shadow: 2px 2px 25px var(--white);
+    box-shadow: 2px 2px 30px rgba(220, 240, 255, 0.8);
 }
 100%{
-    box-shadow: 1px 1px 10px var(--white);
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.4);
 }
 `;
 
@@ -63,6 +77,8 @@ const Processor = styled.div`
   transform: translate(-50%, -50%);
   animation: ${glow} 3s ease infinite;
   padding: 0.5rem;
+  border-radius: 24px;
+  overflow: hidden;
 
   display: flex;
   justify-content: center;
@@ -71,6 +87,8 @@ const Processor = styled.div`
   img {
     width: 100%;
     height: auto;
+    border-radius: 18px;
+    object-fit: cover;
   }
 
   @media screen and (max-width: 48em) {
@@ -89,8 +107,9 @@ const Text = styled.div`
   justify-content: center;
 
   span {
-    margin: 0.2rem 0;
+    margin: 0.5rem 0;
     padding-left: 2rem;
+    line-height: 1.6;
   }
 
   @media screen and (max-width: 64em) {
@@ -116,21 +135,26 @@ const Text = styled.div`
 const ProcessorSection = () => {
   return (
     <Section>
-      <Title>Fastest Processor</Title>
+      <Title>
+        A20 Pro Chip
+        <Subtitle>Built on 2nm Architecture</Subtitle>
+      </Title>
       <Processor>
-        <img src={a15} alt="A15 processor" />
+        <img
+          src={a20Chip || "/assets/images/a20-pro-chip.jpg"}
+          alt="A20 Pro Chip"
+        />
       </Processor>
       <Text>
         <span>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Reprehenderit numquam quae nisi, dolore cum voluptatem cumque quo sit,
-          consequuntur necessitatibus iste fuga assumenda deserunt aut omnis,
-          quaerat aliquid optio veniam.
+          Engineered on an industry-defining 2nm architecture, the all-new A20
+          Pro chip delivers unprecedented processing power with breakthrough
+          thermal efficiency for the most demanding pro workflows.
         </span>
         <span>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Reprehenderit numquam quae nisi, dolore cum voluptatem cumque quo sit,
-          consequuntur necessitatibus iste fuga assumenda deserunt aut.
+          Featuring a next-generation 7-core GPU with hardware-accelerated ray
+          tracing and a 16-core Neural Engine running up to 45 trillion
+          operations per second for Apple Intelligence.
         </span>
       </Text>
     </Section>

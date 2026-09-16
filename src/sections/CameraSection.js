@@ -78,6 +78,7 @@ const Title = styled.h1`
   font-size: var(--fontBig);
   z-index: 5;
   text-transform: capitalize;
+  color: var(--white);
 
   @media screen and (max-width: 70em) {
     font-size: var(--fontxxxl);

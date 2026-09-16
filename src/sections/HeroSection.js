@@ -22,7 +22,11 @@ const Title = styled.h1`
 
   font-size: var(--fontlg);
   font-family: var(--fontL);
-  color: var(--greyLight);
+  color: var(--white);
+  -webkit-text-fill-color: var(--white);
+  font-weight: 700;
+  z-index: 5;
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.55));
 
   @media screen and (max-width: 48em) {
     font-size: var(--fontmd);
@@ -31,7 +35,6 @@ const Title = styled.h1`
 
   @media screen and (max-width: 30em) {
     width: 70%;
-    color: var(--white);
   }
 `;
 const TextContainer = styled.div`
@@ -42,16 +45,16 @@ const TextContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  background-image: linear-gradient(45deg, var(--gradient));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-image: none;
+  color: var(--white);
+  -webkit-text-fill-color: var(--white);
+  filter: drop-shadow(0 2px 18px rgba(0, 0, 0, 0.55));
   z-index: 1;
 
   span {
     font-size: var(--fontxxxl);
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 800;
     padding: 2rem;
 
     @media screen and (max-width: 64em) {
@@ -65,9 +68,7 @@ const TextContainer = styled.div`
 
   @media screen and (max-width: 48em) {
     flex-direction: column;
-    background-image: linear-gradient(90deg, var(--gradient));
     align-items: flex-start;
-    filter: brightness(1.1);
 
     & > *:last-child {
       align-self: flex-end;
@@ -101,7 +102,7 @@ const HeroSection = () => {
       <VideoContainer>
         <video src={backgroundVideo} type="video/mp4" autoPlay muted loop />
       </VideoContainer>
-      <Title>iPhone 14 Pro Max</Title>
+      <Title>iPhone 18 Pro Max</Title>
       <TextContainer>
         <span>So.Cold.</span>
         <span>So.Bold.</span>

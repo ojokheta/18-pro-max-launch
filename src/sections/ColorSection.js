@@ -25,7 +25,7 @@ const Left = styled.div`
   height: 100%;
 
   display: flex;
-  background-color: rgba(155, 181, 206, 0.8);
+  background-color: rgba(91, 36, 51, 0.8);
   position: relative;
 
   @media screen and (max-width: 48em) {
@@ -37,7 +37,7 @@ const Right = styled.div`
   height: 100%;
 
   display: flex;
-  background-color: rgba(155, 181, 206, 0.4);
+  background-color: rgba(91, 36, 51, 0.4);
   position: relative;
 
   @media screen and (max-width: 48em) {
@@ -53,8 +53,10 @@ const Center = styled.div`
   left: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
   font-size: var(--fontxxl);
+  font-weight: 700;
   text-transform: uppercase;
-  filter: brightness(0.85);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.05em;
 
   @media screen and (max-width: 48em) {
     top: 2rem;
@@ -117,40 +119,42 @@ const ColorSection = () => {
       })
       .to(Elem, {
         onStart: updateColor,
-        onStartParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
+        onStartParams: ["#5B2433", "Burgundy", "91, 36, 51"],
         onReverseComplete: updateColor,
-        onReverseCompleteParams: ["#9BB5CE", "Sierra Blue", "155, 181, 206"],
+        onReverseCompleteParams: ["#5B2433", "Burgundy", "91, 36, 51"],
       })
       .to(Elem, {
         onStart: updateColor,
-        onStartParams: ["#F9E5C9", "Gold", "249, 229, 201"],
+        onStartParams: ["#C2D2DE", "Glacier", "194, 210, 222"],
         onReverseComplete: updateColor,
-        onReverseCompleteParams: ["#F9E5C9", "Gold", "249, 229, 201"],
+        onReverseCompleteParams: ["#C2D2DE", "Glacier", "194, 210, 222"],
       })
       .to(Elem, {
         onStart: updateColor,
-        onStartParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
+        onStartParams: ["#E2E4E6", "Silver", "226, 228, 230"],
         onReverseComplete: updateColor,
-        onReverseCompleteParams: ["#505F4E", "Alpine Green", "80, 95, 78"],
+        onReverseCompleteParams: ["#E2E4E6", "Silver", "226, 228, 230"],
       })
       .to(Elem, {
         onStart: updateColor,
-        onStartParams: ["#574f6f", "Deep Purple", "87, 79, 111"],
+        onStartParams: ["#262628", "Space Black", "38, 38, 40"],
         onReverseComplete: updateColor,
-        onReverseCompleteParams: ["#574f6f", "Deep Purple", "87, 79, 111"],
+        onReverseCompleteParams: ["#262628", "Space Black", "38, 38, 40"],
       })
-      .to(Elem, {
-        onStart: updateColor,
-        onStartParams: ["#A50011", "Red", "165, 0, 17"],
-        onReverseComplete: updateColor,
-        onReverseCompleteParams: ["#A50011", "Red", "165, 0, 17"],
-      })
-      .to(Elem, {
-        onStart: updateColor,
-        onStartParams: ["#215E7C", "Blue", "33, 94, 124"],
-        onReverseComplete: updateColor,
-        onReverseCompleteParams: ["#215E7C", "Blue", "33, 94, 124"],
-      });
+      // Keep the fixed phone model fully visible through every colour step
+      // (including Space Black above), then fade it off as the colour
+      // showcase concludes — this scroll timeline is the single source of
+      // truth for the fade, so it can never desync from the colours.
+      .to(
+        "#phone-model",
+        {
+          opacity: 0,
+          pointerEvents: "none",
+          duration: 0.25,
+          ease: "power1.in",
+        },
+        ">+0.1"
+      );
 
     return () => {
       if (t2) t2.kill();
@@ -158,7 +162,7 @@ const ColorSection = () => {
   }, []);
 
   return (
-    <Section ref={sectionRef}>
+    <Section ref={sectionRef} id="colors">
       <Left ref={leftRef} />
       <Center ref={textRef} />
       <Right ref={rightRef}>
