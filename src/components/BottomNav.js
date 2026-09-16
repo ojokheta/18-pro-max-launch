@@ -325,7 +325,7 @@ const BottomNav = () => {
             <NavGroup>
               <GroupTitle>Connect & Inquire</GroupTitle>
               <NavLink href="https://ojokayclay.freebuff.app" target="_blank" rel="noopener noreferrer">Portfolio Hub</NavLink>
-              <NavLink href="https://github.com/ojokay-dev" target="_blank" rel="noopener noreferrer">GitHub Profile</NavLink>
+              <NavLink href="https://github.com/ojokheta" target="_blank" rel="noopener noreferrer">GitHub Profile</NavLink>
               <NavLink href="https://sketchfab.com/3d-models/apple-iphone-18-pro-max-burgundy-2026-604acc18b5d5455d820a16359b45b003" target="_blank" rel="noopener noreferrer">Sketchfab 3D Model</NavLink>
               <NavLink href="mailto:hello@ojokay.dev">Get in Touch</NavLink>
             </NavGroup>
