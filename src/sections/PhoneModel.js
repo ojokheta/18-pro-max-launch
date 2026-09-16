@@ -13,12 +13,20 @@ const Container = styled.div`
   z-index: 1;
   background-color: transparent;
   transition: all 0.3s ease;
+  /* This fixed, full-viewport canvas overlay covers the whole page (including the
+     footer). It must never intercept clicks — the interactive 3D viewer lives in
+     PricingSection's own separate <Canvas>. Without this, footer links/buttons
+     are unclickable. */
+  pointer-events: none;
+  & * {
+    pointer-events: none;
+  }
 `;
 
 const PhoneModel = () => {
   return (
     <Container id="phone-model">
-      <Canvas camera={{ fov: 14 }}>
+      <Canvas camera={{ fov: 14 }} style={{ pointerEvents: 'none' }}>
         <ambientLight intensity={1.25} />
         <directionalLight intensity={0.4} />
         <Suspense fallback={null}>

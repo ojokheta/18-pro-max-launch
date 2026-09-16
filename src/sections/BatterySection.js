@@ -25,7 +25,10 @@ const Title = styled.h1`
   text-transform: capitalize;
   font-size: var(--fontBig);
   color: var(--dark);
-  z-index: 1;
+  /* z-index 2 keeps this title above the fixed #phone-model canvas (z-index: 1)
+     so the canvas joins the .blend-invert backdrop — the glyphs flip white when
+     the dark phone scrolls across them, and read black on the white section. */
+  z-index: 2;
 
   @media screen and (max-width: 70em) {
     font-size: var(--fontxxxl);
@@ -117,7 +120,7 @@ const BatterySection = () => {
 
   return (
     <Section id="battery">
-      <Title>Up to 33 hours battery life. Go all day and beyond...</Title>
+      <Title className="blend-invert">Up to 33 hours battery life. Go all day and beyond...</Title>
       <Battery ref={battery}>
         <li />
         <li />

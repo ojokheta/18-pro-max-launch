@@ -20,7 +20,12 @@ const Section = styled.section`
 const TextContainer = styled.p`
   width: 100%;
   height: 50vh;
-  z-index: 1;
+  /* z-index 2 keeps this text above the fixed #phone-model canvas (z-index: 1)
+     so the canvas is part of the .blend-invert backdrop and the glyphs invert
+     against the phone as it scrolls past. The section itself must stay a plain
+     stacking parent (no z-index/transform/isolation on <Section>). */
+  position: relative;
+  z-index: 2;
 
   display: flex;
   flex-direction: column;
@@ -54,6 +59,9 @@ const TextContainer = styled.p`
 const TextContainer2 = styled.p`
   width: 100%;
   height: 50vh;
+  /* See TextContainer: keeps text above the fixed phone canvas for blending */
+  position: relative;
+  z-index: 2;
 
   display: flex;
   flex-direction: column;
@@ -112,11 +120,11 @@ const DesignSection = () => {
 
   return (
     <Section ref={container}>
-      <TextContainer ref={textOne}>
+      <TextContainer className="blend-invert" ref={textOne}>
         <span>Flawless design with aerospace-grade titanium.</span>
       </TextContainer>
 
-      <TextContainer2 ref={textTwo}>
+      <TextContainer2 className="blend-invert" ref={textTwo}>
         <span>Sculpted titanium contours with next-generation Ceramic Shield.</span>
       </TextContainer2>
     </Section>

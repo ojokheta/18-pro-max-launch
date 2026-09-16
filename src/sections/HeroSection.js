@@ -103,7 +103,11 @@ const HeroSection = () => {
         <video src={backgroundVideo} type="video/mp4" autoPlay muted loop />
       </VideoContainer>
       <Title>iPhone 18 Pro Max</Title>
-      <TextContainer>
+      {/* .blend-invert (mix-blend-mode: difference) keeps the white glyphs high-contrast
+          when the ink video's bright streaks or the dark 3D phone pass underneath —
+          the blend must sit on this container because its z-index forms the stacking
+          context that faces the fixed #phone-model canvas. */}
+      <TextContainer className="blend-invert">
         <span>So.Cold.</span>
         <span>So.Bold.</span>
       </TextContainer>

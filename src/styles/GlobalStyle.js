@@ -66,4 +66,39 @@ body{
   // gradient
   --gradient: #35c3f3 0%, #8b9fe8 20%, #e681d8 39%, #ffa9a4 76%, #fed2ce 100%;
 }
+
+/* ============================================================
+   Dynamic text inversion via CSS blend modes
+   ------------------------------------------------------------
+   Elements tagged .blend-invert render white and use
+   mix-blend-mode: difference, so every glyph automatically
+   flips to high contrast against whatever is painted behind
+   it: light page background => text reads black, dark 3D
+   model / dark canvas / dark section => text reads white.
+
+   (We use mix-blend-mode instead of filter: invert() because
+   a filter cannot see what is painted behind an element —
+   only blend modes react to the backdrop.)
+
+   Stacking rules that keep this working — read before reuse:
+   1. The blended element must paint ABOVE the fixed
+      #phone-model canvas (z-index: 1). Use z-index >= 2 on
+      the text itself so the canvas becomes part of its blend
+      backdrop. Text below the canvas would be occluded, not
+      inverted.
+   2. Do NOT put isolation: isolate, z-index, transform,
+      filter or opacity on the PARENT <section> wrappers of
+      blended text. Any stacking context between the text and
+      the root would trap the blend and exclude the phone
+      canvas from the backdrop, breaking the inversion.
+      The class below puts isolation on the text element
+      itself, which only scopes its own descendants and is
+      always safe.
+   ============================================================ */
+.blend-invert {
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  mix-blend-mode: difference;
+  isolation: isolate;
+}
 `;
